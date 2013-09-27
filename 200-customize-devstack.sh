@@ -33,7 +33,8 @@ glance image-create --name ubuntu-precise-server-i386 --disk-format=raw --contai
 
 # Create an ssh key
 sudo modprobe nbd
-nova keypair-add test > /opt/stack/2013-mac5910-neat-experiments/test.id_rsa
+nova keypair-add test > /opt/stack/2013-mac5910-neat-experiments/oskey.priv
+chmod 600 oskey.priv
 
 # Allow ping and ssh on the default security group
 nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
